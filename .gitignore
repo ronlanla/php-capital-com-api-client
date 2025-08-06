@@ -1,0 +1,16 @@
+/vendor/
+/composer.lock
+/.idea/
+/.vscode/
+/phpunit.xml
+/.phpunit.result.cache
+/.phpstan/
+/coverage/
+*.log
+.DS_Store
+Thumbs.db
+.env
+.env.local
+*.cache
+/CLAUDE.md
+/.claude/settings.local.json
