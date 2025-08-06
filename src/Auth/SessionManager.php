@@ -138,6 +138,11 @@ class SessionManager
             $this->httpClient->setAuthTokens($this->cstToken, $this->securityToken);
         }
 
+        // Update cached session data with new account ID
+        if ($this->sessionData) {
+            $this->sessionData['currentAccountId'] = $accountId;
+        }
+
         $this->logger->info('Switched to account: ' . $accountId);
     }
 
@@ -185,6 +190,16 @@ class SessionManager
     public function getSecurityToken(): ?string
     {
         return $this->securityToken;
+    }
+
+    /**
+     * Get cached session data
+     *
+     * @return array|null
+     */
+    public function getCachedSessionData(): ?array
+    {
+        return $this->sessionData;
     }
 
     /**
